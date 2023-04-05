@@ -1,5 +1,8 @@
 //const randomCache = new ClassCache<RandomPartColor>(new RandomPartColor(), Workspace);
-import { InitializeLootServer } from "@rbxts/loot/out/server/loot";
+import { CreateLootForPlayer, InitializeLootServer } from "@rbxts/loot/out/server/loot";
+import { Lootable } from "@rbxts/loot/out/shared/Loot";
+import CurrenciesData from "database/replicatedStorage/game/currencies/data";
+import { CurrencyIds } from "database/replicatedStorage/game/currencies/ids";
 
 const Workspace = game.GetService("Workspace");
 const Players = game.GetService("Players");
@@ -19,30 +22,12 @@ step.Touched.Connect((part) => {
 		if (player === undefined) return;
 
 		warn("Touched");
-		// const mobData = MobsData.mobs[MobIds[MobIds.Pirate]];
-		// const position = spawn.CFrame.Position;
+		const position = spawn.CFrame.Position;
+		const loots: Lootable[] = [CurrenciesData[CurrencyIds.Gold]];
 
-		//const randomPartClass = randomCache.Get();
-		//randomPartClass.Display(position);
-
-		//task.delay(2, () => {
-		//	randomCache.Return(randomPartClass);
-		//});
-
-		// const dropSelectionParams: IDropSelectionParams = {
-		// 	participants: Players.GetPlayers(),
-		// 	lastDamaged: player,
-		// 	damageContributions: new Map(Players.GetPlayers().map((player) => [player, math.random(0, 100)])),
-		// };
-
-		// mobData.dropTables.forEach((dropTable) => {
-		// 	const dropResult: IDropSelectionResult = SelectItemToDrop(dropTable, dropSelectionParams);
-		// 	dropResult.playerItemsMap.forEach((loots, player) => {
-		// 		loots.forEach((loot) => {
-		// 			CreateLootForPlayer(player, loot, position);
-		// 		});
-		// 	});
-		// });
+		loots.forEach((loot) => {
+			CreateLootForPlayer(player, loot, position);
+		});
 	}
 });
 
