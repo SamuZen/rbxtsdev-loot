@@ -1,13 +1,10 @@
 //const randomCache = new ClassCache<RandomPartColor>(new RandomPartColor(), Workspace);
 import { InitializeLootServer } from "@rbxts/loot/out/server/loot";
-import Remotes from "shared/Remotes";
 
 const Workspace = game.GetService("Workspace");
 const Players = game.GetService("Players");
 
 InitializeLootServer();
-
-const netRemotes = Remotes;
 
 const step = new Instance("Part");
 step.Size = new Vector3(10, 10, 10);
