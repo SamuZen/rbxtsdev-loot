@@ -11,6 +11,13 @@ const CurrenciesData: ICurrencyDatabase = {
 		lootType: LootTypes.Magnetic,
 		itemType: ItemType.Currency,
 	},
+	[CurrencyIds[CurrencyIds.Cristal]]: {
+		id: CurrencyIds[CurrencyIds.Cristal],
+		name: "Cristal",
+		icon: "rbxassetid://9724729278",
+		lootType: LootTypes.Interactable,
+		itemType: ItemType.Currency,
+	},
 };
 
 export default CurrenciesData;

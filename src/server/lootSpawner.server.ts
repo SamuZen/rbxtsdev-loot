@@ -21,9 +21,12 @@ step.Touched.Connect((part) => {
 		const player = Players.GetPlayerFromCharacter(part.Parent as Model);
 		if (player === undefined) return;
 
-		warn("Touched");
 		const position = spawn.CFrame.Position;
-		const loots: Lootable[] = [CurrenciesData[CurrencyIds.Gold]];
+		const loots: Lootable[] = [
+			CurrenciesData[CurrencyIds.Gold],
+			CurrenciesData[CurrencyIds.Gold],
+			CurrenciesData[CurrencyIds.Cristal],
+		];
 
 		loots.forEach((loot) => {
 			CreateLootForPlayer(player, loot, position);
