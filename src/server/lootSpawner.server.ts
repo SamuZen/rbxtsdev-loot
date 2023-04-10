@@ -1,5 +1,5 @@
 //const randomCache = new ClassCache<RandomPartColor>(new RandomPartColor(), Workspace);
-import { CreateLootForPlayer, InitializeLootServer } from "@rbxts/loot/out/server/loot";
+import { LootServer } from "@rbxts/loot";
 import { Lootable } from "@rbxts/loot/out/shared/Loot";
 import CurrenciesData from "database/replicatedStorage/game/currencies/data";
 import { CurrencyIds } from "database/replicatedStorage/game/currencies/ids";
@@ -7,7 +7,7 @@ import { CurrencyIds } from "database/replicatedStorage/game/currencies/ids";
 const Workspace = game.GetService("Workspace");
 const Players = game.GetService("Players");
 
-InitializeLootServer();
+LootServer.Initialize();
 
 const step = new Instance("Part");
 step.Size = new Vector3(10, 10, 10);
@@ -29,7 +29,7 @@ step.Touched.Connect((part) => {
 		];
 
 		loots.forEach((loot) => {
-			CreateLootForPlayer(player, loot, position);
+			LootServer.CreateLoot(player, loot, position);
 		});
 	}
 });

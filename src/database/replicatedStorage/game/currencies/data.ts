@@ -10,6 +10,7 @@ const CurrenciesData: ICurrencyDatabase = {
 		icon: "rbxassetid://9341850470",
 		lootType: LootTypes.Magnetic,
 		itemType: ItemType.Currency,
+		despawnTime: 2,
 	},
 	[CurrencyIds[CurrencyIds.Cristal]]: {
 		id: CurrencyIds[CurrencyIds.Cristal],
