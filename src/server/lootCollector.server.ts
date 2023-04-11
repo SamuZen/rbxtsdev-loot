@@ -1,14 +1,18 @@
 import { LootServer } from "@rbxts/loot";
-import { LootCollectedSignalData, LootDespawnSignalData, LootSpawnSignalData } from "@rbxts/loot/out/shared/Loot";
+import {
+	ServerLootCollectedSignalData,
+	ServerLootDespawnSignalData,
+	ServerLootSpawnSignalData,
+} from "@rbxts/loot/out/shared/Loot";
 
-LootServer.OnLootCollected((data: LootCollectedSignalData) => {
+LootServer.OnLootCollected((data: ServerLootCollectedSignalData) => {
 	warn(data.player.Name, " collected ", data.loot.id);
 });
 
-LootServer.OnLootDespawned((data: LootDespawnSignalData) => {
+LootServer.OnLootDespawned((data: ServerLootDespawnSignalData) => {
 	warn(data.player.Name, " despawned ", data.lootId);
 });
 
-LootServer.OnLootSpawned((data: LootSpawnSignalData) => {
+LootServer.OnLootSpawned((data: ServerLootSpawnSignalData) => {
 	warn(data.player.Name, " spawned ", data.creationData.id);
 });
