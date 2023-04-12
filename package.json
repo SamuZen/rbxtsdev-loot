@@ -23,6 +23,6 @@
     "typescript": "^5.0.3"
   },
   "dependencies": {
-    "@rbxts/class-cache": "^1.0.4"
+    "@rbxts/loot": "^1.0.0"
   }
 }
