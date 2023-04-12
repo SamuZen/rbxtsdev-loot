@@ -1,7 +1,7 @@
 import * as LootClient from "@rbxts/loot/out/client/loot";
 
 LootClient.Initialize();
-LootClient.SetCollectorSize(5);
+LootClient.SetCollectorSize(10);
 
 const workspace = game.GetService("Workspace");
 
